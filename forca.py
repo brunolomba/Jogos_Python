@@ -37,7 +37,7 @@ def apresentacao():
     print('#' * 100)
 
 def carregar_palavra_secreta():
-    arquivo = open('jogos_pyhton/palavras.txt', 'r')
+    arquivo = open('palavras.txt', 'r')
     palavras = []
 
     for linha in arquivo:

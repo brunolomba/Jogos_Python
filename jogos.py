@@ -1,12 +1,13 @@
 import forca
 import numero_secreto
+import digitacao
 
 print('#' * 100)
 print('Escolha um jogo')
 print('#' * 100)
 
 while True:
-    print('(1) Forca, (2)Numero secreto ou digite (s) para sair')
+    print('Digite para (1) Forca, (2) Numero secreto, (3) Digitação ou (0) zero para sair')
 
     jogo = int(input('Qual jogo deseja: '))
 
@@ -14,5 +15,7 @@ while True:
         forca.jogar()
     elif jogo == 2:
         numero_secreto.jogar()
-    elif str(jogo.lower()) == 's':
+    elif jogo == 3:
+        digitacao.jogar()
+    elif jogo == 0:
         break

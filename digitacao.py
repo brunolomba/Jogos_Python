@@ -6,27 +6,35 @@ import requests
 import random
 import time
 
-url = 'https://www.mit.edu/~ecprice/wordlist.10000'
+def jogar():
+    url = 'https://www.mit.edu/~ecprice/wordlist.10000'
 
-resposta = requests.get(url)
-palavras = resposta.content.splitlines()
+    resposta = requests.get(url)
+    palavras = resposta.content.splitlines()
 
-palavras = [palavra.decode('utf-8') for palavra in palavras]
+    palavras = [palavra.decode('utf-8') for palavra in palavras]
 
-random_palavras = random.sample(palavras, 10)
+    random_palavras = random.sample(palavras, 10)
 
-pontos = 0
-inicio = time.perf_counter()
+    acertos = 0
+    inicio = time.perf_counter()
 
-for palavra in random_palavras:
-    print(palavra)
-    entrada = input()
-    if entrada == palavra:
-        pontos += 1
+    for palavra in random_palavras:
+        print(palavra)
+        while True:
+            entrada = input()
+            if len(entrada) > 1:
+                break
+        if entrada == palavra:
+            acertos += 1
+        
 
-termino = time.perf_counter()
+    termino = time.perf_counter()
 
-print(pontos)
-print(termino - inicio)
+    print(f' Você acertou {acertos} palavras')
+    print(termino - inicio)
 
-print('FIM DO PROGRAMA')
+    print('FIM DO PROGRAMA')
+
+if __name__== '__main__':
+    jogar()
