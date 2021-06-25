@@ -1,12 +1,12 @@
-print('#' * 120)
-print('Jogo de digitação')
-print('#' * 120)
-
 import requests
 import random
 import time
 
 def jogar():
+    print('#' * 120)
+    print('Jogo de digitação')
+    print('#' * 120)
+
     url = 'https://www.mit.edu/~ecprice/wordlist.10000'
 
     resposta = requests.get(url)
@@ -32,7 +32,8 @@ def jogar():
     termino = time.perf_counter()
 
     print(f' Você acertou {acertos} palavras')
-    print(termino - inicio)
+    if acertos == 10:
+        print(f'Seu tempo foi de {termino - inicio} segundos')
 
     print('FIM DO PROGRAMA')
 

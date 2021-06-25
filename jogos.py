@@ -10,7 +10,7 @@ print('#' * 100)
 while True:
     print('Digite para (1) Forca, (2) Numero secreto, (3) Digitação, (4) Jo-ken-pô ou (0) zero para sair')
 
-    jogo = int(input('Qual jogo deseja: '))
+    jogo = int(input('Qual jogo você quer: '))
 
     if jogo == 1:
         forca.jogar()
